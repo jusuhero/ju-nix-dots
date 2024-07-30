@@ -18,9 +18,4 @@
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
   };
 
-  home.file.".config/hypr/hyprland.conf".source = ../hypr/hyprland.conf;
-  home.file.".config/hypr/display.conf".source = ../hypr/display.conf;
-  home.file.".config/hypr/keybinds.conf".source = ../hypr/keybinds.conf;
-  home.file.".config/hypr/windowrules.conf".source = ../hypr/windowrules.conf;
-  home.file.".config/hypr/styling.conf".source = ../hypr/styling.conf;
 }
