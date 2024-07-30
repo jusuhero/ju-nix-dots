@@ -22,11 +22,12 @@ let
 
 in {
 nixosConfigurations = {
-    enzo = lib.nixosSystem rec {
+    watsaket = lib.nixosSystem rec {
       inherit system;
       specialArgs = { inherit hyprland; };
       modules = [ 
-        ./nixos/configuration.nix
+        ./nix/configuration.nix
+	./hosts/WATSAKET/hardware-configuration.nix
         hyprland.nixosModules.default
         home-manager.nixosModules.home-manager
         {
@@ -36,6 +37,13 @@ nixosConfigurations = {
           home-manager.extraSpecialArgs = specialArgs;
         }
       ];
+     };
+     angkorwat = lib.nixosSystem{
+	system = "x86_64-linux";
+	modules = [
+		./hosts/ANGKORWAT/hardware-configuration.nix
+		./nix/configuration.nix
+	];
     };
   };
 };
