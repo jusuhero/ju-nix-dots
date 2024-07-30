@@ -46,5 +46,16 @@ nixosConfigurations = {
 	];
     };
   };
+
+homeConfigurations = {
+  ju = home-manager.lib.homeManagerConfiguration {
+    system = "x86_64-linux";
+    homeDirectory = "/home/ju";
+    username = "ju";
+    configuration = import ./home/home.nix;
+    extraSpecialArgs = { inherit hyprland; }
+  };
+};
+
 };
 }
