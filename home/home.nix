@@ -1,7 +1,7 @@
 { hyprland, pkgs, ...}: {
 
   imports = [
-    ./hypr/hyprland.nix
+    ./hypr/hypr.nix
     #./environment
   ];
 
