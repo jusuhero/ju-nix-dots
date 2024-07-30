@@ -17,7 +17,7 @@
     nano
     rofi
     git
-  ]) 
+  ]);
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
