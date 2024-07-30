@@ -1,4 +1,4 @@
-{ config, pkgs, hyprland ... }:
+{ config, pkgs, hyprland, ... }:
 
 {
   # Enable Hyprland
@@ -6,9 +6,9 @@
     hyprland.homeManagerModules.default
   ];
 
-  programs.hyprland.enable = true;
+  wayland.windowManager.hyprland.enable = true;
 
-  environment.sessionVariables = {
+  home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
     XDG_CURRENT_DESKTOP = "Hyprland";
