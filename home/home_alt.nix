@@ -1,0 +1,35 @@
+{ hyprland, pkgs, ...}: {
+
+  imports = [
+    hyprland.homeManagerModules.default
+    #./environment
+  ];
+
+  home = {
+    username = "ju";
+    homeDirectory = "/home/ju";
+  };
+
+  home.packages = (with pkgs; [
+    
+    #User Apps
+    neovim
+    nano
+    rofi
+    git
+  ]) 
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "Tokyonight-Dark-B-LB";
+    };
+  };
+
+  programs.home-manager.enable = true;
+
+  home.stateVersion = "23.05";
+}
