@@ -29,6 +29,12 @@
     };
   };
 
+  programs.git = {
+	enable = true;
+	userName = "Justin";
+	userEmail = "justin@ackermann.saarland";
+  };
+
   programs.home-manager.enable = true;
 
   home.stateVersion = "23.05";
