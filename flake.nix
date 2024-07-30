@@ -30,6 +30,12 @@ nixosConfigurations = {
 	./hosts/WATSAKET/hardware-configuration.nix
         hyprland.nixosModules.default
         home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.ju = import ./home/home.nix;
+          home-manager.extraSpecialArgs = specialArgs;
+        }
       ];
      };
      angkorwat = lib.nixosSystem{
@@ -40,16 +46,6 @@ nixosConfigurations = {
 	];
     };
   };
-
-homeConfigurations = {
-  ju = home-manager.lib.homeManagerConfiguration {
-    system = "x86_64-linux";
-    homeDirectory = "/home/ju";
-    username = "ju";
-    configuration = import ./home/home.nix;
-    extraSpecialArgs = { inherit hyprland; };
-  };
-};
 
 };
 }
