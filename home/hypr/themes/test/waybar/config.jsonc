@@ -1,0 +1,126 @@
+// Ju's Waybar
+// Heavily Inspired by: 
+// https://github.com/Axenide/Dotfiles
+// Thanks <3
+{
+  "position": "top",
+  "layer": "top",
+  "height": 14,
+  "output": [
+    "DP-3",
+    "eDP-1"
+  ],
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "custom/playerctl"
+  ],
+  "modules-right": [
+    "backlight",
+    "clock"
+  ],
+  // Modules configuration
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""],
+    "on-click-right": "bash ~/.config/waybar/scripts/brightness.sh 10000",
+    "on-click": "bash ~/.config/waybar/scripts/brightness.sh -10000"
+  },
+  "clock": {
+    // "format": "{:%H:%M:%OS}",
+    "format": "<span size='large' color=\"#ed8796\"></span> {:%H:%M}",
+    "interval": 1,
+    "tooltip": "false",
+    //  "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    // "format-alt": "{:%d/%m/%Y}",
+    "format-alt": "<span size='large' color=\"#a6da95\"></span> {:%d.%m.%Y}",
+    "on-click-right": "bash ~/.config/waybar/scripts/toggle.sh gnome-calendar",
+  },
+  "hyprland/workspaces": {
+    "format": "<span color=\"#FABD2F\">{icon}</span>",
+    "tooltip": false,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
+    "all-outputs": false,
+    "current-only": true,
+    "on-click": "activate",
+    "sort-by-number": true,
+     "format-icons": {
+      "urgent": "󰁡 ",
+      "active": "󰫈 ",
+      "default": "󰋙 "
+    }
+  },
+  "custom/swww": {
+    "format": "   ",
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/cycle_wallpapers"
+  },
+  "custom/playerctl": {
+    "format": "{icon}   ::  <span>{}</span>",
+    "return-type": "json",
+    "max-length": 48,
+    "icon-size": 48,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click-middle": "playerctl play-pause",
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "format-icons": {
+      "Playing": "<span size='large' foreground='#AA0951'></span>",
+      "Paused": "<span foreground='#47423E'></span>"
+    },
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{icon}",
+    "format-icons": [
+      "󰃚",
+      "󰃛",
+      "󰃜",
+      "󰃝",
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    //	"on-scroll-up":,
+    //	"on-scroll-down":,
+    "tooltip-format": "{percent}%"
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "pamixer -t",
+    "on-click-right": "kitty -o initial_window_width=500 -o initial_window_height=500 pulsemixer",
+    "tooltip-format": "{volume}%"
+  },
+  "custom/launcher": {
+    // "format": "󰣇",
+    // "format": "󱙝",
+    // "format": "",
+    // "format": "󱜿",
+    "format": "󱃲 ",
+    //    "on-click": "$(tofi-drun --prompt-text 'Run: ')",
+    // "on-click": "bash $HOME/.config/rofi/launchers/type-1/launcher.sh",
+    //    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css" 
+    "on-click": "sh $HOME/.config/rofi/powermenu/powermenu.sh"
+  },
+  "custom/hyprpicker": {
+    "format": "󰈋",
+    "on-click": "bash ~/.config/waybar/scripts/hyprpicker-hex.sh",
+    "on-click-right": "bash ~/.config/waybar/scripts/hyprpicker-rgb.sh"
+  },
+}

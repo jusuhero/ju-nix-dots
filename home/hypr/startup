@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+# Hyprland Startup Script
+
+CNFG=$HOME/.config
+START_WALLPAPER=$CNFG/hypr/wallpapers/2.jpg
+
+# SWWW Daemon (Wallpaper switcher)
+swww-daemon
+
+# Notification client
+swaync &
+
+# Clipboard Manager
+copyq &
+
+# Bluetooth GUI Helper
+#blueman-manager &
+
+# Set wallpaper
+$CNFG/hypr/scripts/wall $START_WALLPAPER
+
+# Start Waybar
+~/.config/waybar/scripts/toggle_bar.sh
+
+# Start authentication agent
+/usr/lib/polkit-kde-authentication-agent-1 &
+
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+
+# oddly enough, this is needed for me or no sound on launch
+systemctl --user restart pipewire &

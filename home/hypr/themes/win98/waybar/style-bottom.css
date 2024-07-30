@@ -1,0 +1,77 @@
+/* Ju's Waybar Bottom Style 
+Edited, original version by: 
+https://github.com/Axenide/Dotfiles
+*/
+
+@import "colors.css";
+
+* {
+  border: none;
+  border-radius: 0px;
+  /* font-family: 'Iosevka'; */
+  /* font-size: 14pt; */
+  font-style: normal;
+  font-family: "GeistMono NF Bold";
+  min-height: 0;
+}
+
+window#waybar {
+  /* border: 2px solid @brblack; */
+  background-color: #C0BCC0;
+  color: black;
+  border: 4px outset darkgray;
+}
+
+
+#clock,
+#tray{
+  color: black;
+  padding-left: 10px;
+  padding-right: 12px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.modules-right{
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border: 2px inset grey;
+}
+
+#custom-launcher {
+  color: black;
+  font-family: 'Arial';
+  font-weight: bold;
+  font-size: 16px;
+  border: 3px outset grey;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-right: 4px;
+  padding-left: 4px;
+  margin-right: 6px;
+}
+
+#taskbar{
+  color: black;
+}
+
+#taskbar button{
+  color: black;
+  font-size: 13px; 
+  border: 3px darkgrey;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-right: 4px;
+  border-style: outset;
+}
+
+#taskbar button.active{
+  font-weight: bold;
+  background-color: #D8D6D7;
+  border: 3px grey;
+  border-style: inset;
+}
+
+
+
+

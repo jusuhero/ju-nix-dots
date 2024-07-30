@@ -1,0 +1,44 @@
+{
+  "layer": "top",
+  "output": ["*"],
+  "position": "bottom",
+  "modules-left": [
+    "custom/launcher",
+    "wlr/taskbar"
+  ],
+  "modules-center": [
+  ],
+  "modules-right": [
+    "tray",
+    "clock"
+  ],
+  "margin-top": 8,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
+  "custom/launcher": {
+    "format": "󰨡  Start",
+    "tooltip": false,
+    "on-click": "rofi -show drun -theme ~/.config/hypr/themes/win98/rofi/style.rasi"
+  },
+  "hyprland/window": {
+  "format": "{title}"
+
+  },
+  "wlr/taskbar": {
+    "format": "{icon} {title}"
+  },
+  "clock": {
+    "format": "{:%H:%M}"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "custom/ss": {
+    "format": "◯",
+    "on-click": "grimshot copy area"
+  }
+
+ 
+}

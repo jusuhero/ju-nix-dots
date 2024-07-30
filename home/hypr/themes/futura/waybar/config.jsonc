@@ -1,0 +1,84 @@
+// Ju's Waybar
+// Heavily Inspired by: 
+// https://github.com/Axenide/Dotfiles
+// Thanks <3
+{
+  "position": "top",
+  "layer": "top",
+  "height": 16,
+  "output": [
+    "DP-3",
+    "eDP-1"
+  ],
+  "margin-top": 10,
+  "margin-bottom": 0,
+  "margin-left": 400,
+  "fixed-center": true,
+  "margin-right": 400,
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "custom/playerctl"
+  ],
+  "modules-right": [
+    "clock",
+    "custom/swww"
+  ],
+  // Modules configuration
+  "clock": {
+    // "format": "{:%H:%M:%OS}",
+    "format": "<span color=\"#ed8796\"></span> {:%H:%M}",
+    "interval": 1,
+    "tooltip": "false",
+    //  "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    // "format-alt": "{:%d/%m/%Y}",
+    "format-alt": "<span color=\"#a6da95\"></span> {:%d.%m.%Y}",
+    "on-click-right": "bash ~/.config/waybar/scripts/toggle.sh gnome-calendar",
+  },
+  "hyprland/workspaces": {
+    "format": "<span size='large'>{icon}</span>",
+    "tooltip": false,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
+    "all-outputs": false,
+    "current-only": true,
+    "on-click": "activate",
+    "sort-by-number": true,
+    "format-icons": {
+      "urgent": " 󰁡 ",
+      "active": " 󰫈 ",
+      "default": " 󰋙 "
+    }
+  },
+  "custom/swww": {
+    "format": "   ",
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/cycle_wallpapers"
+  },
+  "custom/playerctl": {
+    "format": "{icon}  <span>{}</span>",
+    "return-type": "json",
+    "max-length": 50,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click-middle": "playerctl play-pause",
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "format-icons": {
+      "Playing": "<span foreground='#EC2323'>󰝚</span>",
+      "Paused": "<span foreground='#b2b2b2'>󰝛</span>"
+    },
+  },
+
+  "custom/launcher": {
+    "format": "",
+    "on-click": "sh $HOME/.config/rofi/powermenu/powermenu.sh"
+  },
+  "custom/hyprpicker": {
+    "format": "󰈋",
+    "on-click": "bash ~/.config/waybar/scripts/hyprpicker-hex.sh",
+    "on-click-right": "bash ~/.config/waybar/scripts/hyprpicker-rgb.sh"
+  },
+}

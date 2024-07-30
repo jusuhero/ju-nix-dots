@@ -1,0 +1,166 @@
+/* Ju's Waybar Bottom Style 
+Edited, original version by: 
+https://github.com/Axenide/Dotfiles
+*/
+
+
+* {
+  border-radius: 20px;
+  /* font-family: 'Iosevka'; */
+  /* font-size: 14pt; */
+  font-style: normal;
+  font-family: "Monoid Nerd Font Retina";
+  font-size: 11px;
+  min-height: 0;
+
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+window#waybar {
+  background: transparent;
+  /* border: 2px solid @brblack; */
+  color: #dc94d7;
+  border-radius: 16px;
+  /* border: 2px solid #1c0018; */
+}
+
+#custom-swww {
+        background: linear-gradient(135deg, 
+        #1c0010, 
+        #60146D, 
+        #574C75, 
+        #AA0951, 
+        #67298F, 
+        #6650A9, 
+        #9A1C96, 
+        #dc94d7, 
+        #9a6796, 
+        #1c0010);
+  border: 2px solid #1c0010;
+  border-radius: 20px;
+  font-size: 17px;
+  background-size: 500% 500%;
+  animation: gradient 8s linear infinite;
+  font-weight: bolder;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
+#clock {
+  color: @brgreen;
+  padding-left: 10px;
+  padding-right: 12px;
+  margin-left: 5px;
+  font-weight: bold;
+  /* border-left: solid 1px @black; */
+}
+
+#custom-launcher {
+  color: @red;
+  background-color: transparent;
+  font-family: 'Symbols Nerd Font';
+  font-size: 20px;
+  padding: 10px 12px 10px 14px;
+  margin-right: 15px;
+}
+
+#custom-playerctl {
+  font-weight: bold;
+}
+
+#cpu,
+#memory,
+#disk,
+#network,
+#custom-gpu-usage,
+#temperature,
+#pulseaudio,
+#battery,
+#custom-ss,
+#custom-weather,
+#custom-hyprpicker,
+#custom-notifications,
+#tray,
+#custom-vpn,
+#custom-sww {
+  background-color: #000000;
+  font-size: 14px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 5px 10px 5px 10px;
+  padding-right: 10px;
+  font-weight: bold;
+  /* border: solid 2px @black; */
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+
+#tray,
+#custom-ss,
+#custom-notifications,
+#custom-hyprpicker,
+#custom-vpn {
+  /* color: @white; */
+  color: #dc94d7;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+  text-shadow: 0px 0px 3px @white;
+}
+
+#custom-ss {
+  font-size: 14px;
+}
+
+#custom-vpn {
+  padding-right: 15px;
+}
+
+#battery {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+#backlight {
+  color: @white;
+  font-family: 'Symbols Nerd Font';
+  font-size: 10pt;
+  margin: 0;
+  padding: 0 10px;
+}
+
+
+#bluetooth.connected {
+  color: @brgreen;
+}
+
+#bluetooth.off {
+  color: @brblack;
+}
+
+#pulseaudio.muted {
+  color: @brblack;
+}
+
+#battery.charging {
+  color: @brgreen;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}

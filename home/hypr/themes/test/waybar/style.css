@@ -1,0 +1,78 @@
+/*
+Edited, originally from: 
+https://github.com/Axenide/Dotfiles
+*/
+
+
+* {
+  border: none;
+  border-radius: 0px;
+  /* font-family: 'Iosevka'; */
+  /* font-size: 13pt; */
+  font-style: normal;
+  font-family: 'CaskaydiaCove Nerd Font Mono', 'Times New Roman', Times, serif;
+  color: #dc94d7;
+  /* font-family: 'GoMono Nerd Font'; */
+  /* min-height: 0; */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+window#waybar {
+  background: black;
+  border: 2px solid #000000;
+  /* border: 2px solid #EA8232; */
+  /* color: @white; */
+  color: #AA0951;
+}
+
+#workspaces button {
+  font-size: 28px;
+
+}
+
+
+
+
+#custom-launcher {
+  font-family: 'Symbols Nerd Font';
+  font-size: 22px;
+  color: #DB2D4E;
+  padding: 10px 12px 10px 14px;
+  margin-right: 5px;
+  margin-left: 15px;
+}
+
+#bluetooth,
+#backlight,
+#clock,
+#custom-playerctl {
+  color: #dc94d7;
+  font-size: 18px;
+  text-shadow: 1px 1px 3px #DB2D4E;
+}
+
+#clock{
+  margin-right: 10px;
+  margin-left: 20px;
+  padding-bottom: 2px;
+}
+
+#backlight,
+#tray{
+  font-family: "Symbols Nerd Font";
+  font-size: 16px;
+}
+
