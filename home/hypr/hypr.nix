@@ -10,6 +10,7 @@
   wayland.windowManager.hyprland.package = pkgs.hyprland;
   wayland.windowManager.hyprland.xwayland.enable = true;
   wayland.windowManager.hyprland.systemd.enable = true;
+  wayland.windowManager.hyprland.systemd.variables = ["--all"];
 
   home.sessionVariables = {
      NIXOS_OZONE_WL = "1";
@@ -23,31 +24,22 @@
      MOZ_DISABLE_RDD_SANDBOX = "1";
    };
 
-  wayland.windowManager.hyprland.settings = {
-    "$mod" = "SUPER";
+  wayland.windowManager.hyprland.settings = 
+    {
+    	"$mod" = "SUPER";
 
-    input = {
-      kb_layout=de,us 
-      kb_variant=fffff
-      kb_model=
-      kb_options= grp:alt_shift_toggle
-      kb_rules = 
-      follow_mouse = 1
-      sensitivity = 0
+	general = {
+		gaps_in = 5;
+		gaps_out = 10; 
+		border_size = 2;
+	};
+    	decoration = {
+      		shadow_offset = "0 5";
+    	};
 
-      touchpad {
-        natural_scroll = no
-      };
-    };
-
-    decoration = {
-      shadow_offfset = "0 5"
-    };
-
-    bindm = [
-      "$mod, F, exec, firefox"
-    ];
-
+    	bindm = [
+      	"$mod, F, exec, firefox"
+    	];
    };
 
 }
