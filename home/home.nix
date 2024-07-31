@@ -19,6 +19,8 @@
     rofi
     git
     firefox
+
+    bibata-cursors
   ]);
 
   dconf.settings = {
