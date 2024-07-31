@@ -59,5 +59,53 @@
       border_part_of_window = true;
       no_border_on_floating = false;
     };
+    bindm = [
+      "$mainMod, mouse:272, movewindow"
+      "$mainMod, mouse:273, resizewindow"
+    ];
+
+    bind = [
+      "$mainMod, mouse_down, workspace, e+1"
+      "$mainMod, mouse_up, workspace, e-1"
+
+      "CTRL_ALT, Return, exec, kitty --start-as-fullscreen -o 'font_size=25' --title all_is_kitty"
+      "ALT, Return, exec, kitty --single-instance"
+      "CTRL_ALT, T, exec, kitty --title fly_is_kitty"
+
+      "$mainMod, L, exec, hyprlock"
+      "$mainMod, F, exec, firefox"
+      "$mainMod, D, exec, discord"
+      "$mainMod, E, exec, thunar"
+      "$mainMod, Q, killactive"
+      "$mainMod, S, togglefloating"
+      "$mainMod, R, exec, kitty -e ranger --cmd 'set show_hidden true'"
+      "$mainMod, G, togglegroup"
+      "$mainMod, tab, changegroupactive"
+
+      "$mainMod, F1, pseudo,"
+      "$mainMod, F2, togglesplit,"
+
+      "ALT, right, movefocus, r"
+      "ALT, left, movefocus, l"
+      "ALT, up, movefocus, u"
+      "ALT, down, movefocus, d"
+
+      "$mainMod, up, movewindow, u"
+      "$mainMod, down, movewindow, d"
+      "$mainMod, left, movewindow, l"
+      "$mainMod, right, movewindow, r"
+      "$mainMod SHIFT, left, movetoworkspace, e-1"
+      "$mainMod SHIFT, right, movetoworkspace, e+1"
+
+      "$mainMod, 1, workspace, 1"
+      "$mainMod, 2, workspace, 2"
+
+      "$mainMod CTRL, left, resizeactive, -20 0"
+      "$mainMod CTRL, right, resizeactive, 20 0"
+      "$mainMod CTRL, up, resizeactive, 0 -20"
+      "$mainMod CTRL, down, resizeactive, 0 20"
+
+      
+    ];
   };
 }
