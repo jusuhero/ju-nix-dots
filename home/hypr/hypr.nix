@@ -30,27 +30,5 @@
     kitty
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    "$mod" = "SUPER";
-
-	  general = {
-	    gaps_in = 5;
-      gaps_out = 10; 
-      border_size = 2;
-      layout = "dwindle";
-	  };
-    
-    decoration = {
-      shadow_offset = "0 5";
-    };
-
-    bindm = [
-    	"$mod, F, exec, firefox"
-      "$mod SHIFT, Q, exit"
-      "$mod, D, exec, discord"
-      "$mod, E, exec, thunar"
-      "$mod, Q, killactive"
-      "$mod, L, exec, hyprlock"
-    ];
-   };
+  home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
 }
