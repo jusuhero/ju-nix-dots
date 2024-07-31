@@ -29,9 +29,6 @@
       color-scheme = "prefer-dark";
     };
 
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "Tokyonight-Dark-B-LB";
-    };
   };
 
   programs.git = {
