@@ -17,8 +17,6 @@
   networking.networkmanager.enable = true;
 
   programs.dconf.enable = true;
-
-  programs.hyprland.enable = true;
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
@@ -62,8 +60,6 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-     vim
-     git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
