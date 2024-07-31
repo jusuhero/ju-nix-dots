@@ -28,6 +28,7 @@ nixosConfigurations = {
       specialArgs = { inherit hyprland; };
       modules = [ 
         ./nix/configuration.nix
+        ./modules/stylix.nix
 	      ./hosts/WATSAKET/hardware-configuration.nix
         hyprland.nixosModules.default
         home-manager.nixosModules.home-manager
