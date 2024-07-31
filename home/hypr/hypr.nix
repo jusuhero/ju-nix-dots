@@ -27,6 +27,7 @@
   home.packages = with pkgs; [
     waybar
     hyprlock
+    kitty
   ];
 
   wayland.windowManager.hyprland.settings = {
@@ -36,7 +37,7 @@
 	    gaps_in = 5;
       gaps_out = 10; 
       border_size = 2;
-      layout = dwindle;
+      layout = "dwindle";
 	  };
     
     decoration = {
