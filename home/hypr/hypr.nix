@@ -24,22 +24,32 @@
      MOZ_DISABLE_RDD_SANDBOX = "1";
    };
 
-  wayland.windowManager.hyprland.settings = 
-    {
-    	"$mod" = "SUPER";
+  home.packages = with pkgs; [
+    waybar
+    hyprlock
+  ];
 
-	general = {
-		gaps_in = 5;
-		gaps_out = 10; 
-		border_size = 2;
-	};
-    	decoration = {
-      		shadow_offset = "0 5";
-    	};
+  wayland.windowManager.hyprland.settings = {
+    "$mod" = "SUPER";
 
-    	bindm = [
-      	"$mod, F, exec, firefox"
-    	];
+	  general = {
+	    gaps_in = 5;
+      gaps_out = 10; 
+      border_size = 2;
+      layout = dwindle;
+	  };
+    
+    decoration = {
+      shadow_offset = "0 5";
+    };
+
+    bindm = [
+    	"$mod, F, exec, firefox"
+      "$mod SHIFT, Q, exit"
+      "$mod, D, exec, discord"
+      "$mod, E, exec, thunar"
+      "$mod, Q, killactive"
+      "$mod, L, exec, hyprlock"
+    ];
    };
-
 }
