@@ -11,7 +11,7 @@ inputs = {
   stylix.url = "github:danth/stylix";
 };
 
-outputs = { self, nixpkgs, home-manager, hyprland, ...}: 
+outputs = { self, nixpkgs, home-manager, hyprland, stylix, ...}: 
 
 let
   system = "x86_64-linux";
@@ -28,11 +28,11 @@ nixosConfigurations = {
       specialArgs = { inherit hyprland; };
       modules = [ 
         ./nix/configuration.nix
-        ./modules/stylix.nix
+        ./modules
 	      ./hosts/WATSAKET/hardware-configuration.nix
         hyprland.nixosModules.default
         home-manager.nixosModules.home-manager
-        inputs.stylix.nixosModules.stylix
+        stylix.nixosModules.stylix
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
