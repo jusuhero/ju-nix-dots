@@ -1,7 +1,8 @@
 { hyprland, pkgs, ...}: {
 
   imports = [
-    ./hypr/hypr.nix
+    ./hypr
+    ./hyprlock
     #./environment
   ];
 
