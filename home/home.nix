@@ -3,6 +3,7 @@
   imports = [
     ./hypr
     ./hyprlock
+    ./stylix.nix
     #./environment
   ];
 
