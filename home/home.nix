@@ -35,8 +35,6 @@
 	userEmail = "justin@ackermann.saarland";
   };
 
-  programs.hyprland.enable = true;
-
   programs.home-manager.enable = true;
 
   home.stateVersion = "23.05";
