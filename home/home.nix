@@ -17,6 +17,7 @@
     nano
     rofi
     git
+    firefox
   ]);
 
   dconf.settings = {
@@ -35,6 +36,7 @@
 	userEmail = "justin@ackermann.saarland";
   };
 
+  programs.firefox.enable = true;
   programs.home-manager.enable = true;
 
   home.stateVersion = "23.05";
