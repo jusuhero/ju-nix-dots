@@ -4,7 +4,7 @@
     ./hypr
     ./hyprlock
     ./kitty
-    ./stylix
+    ./firefox
     #./environment
   ];
 

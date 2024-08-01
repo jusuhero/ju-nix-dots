@@ -88,9 +88,8 @@
         passes = 3;
       };
 
-      drop-shadow = true; 
+      drop_shadow = true; 
       shadow_range = 15;
-      shadow_offset = "0,0";
       shadow_render_power = 3;
     };
 
