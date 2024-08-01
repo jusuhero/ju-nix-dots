@@ -4,6 +4,7 @@
     ./hypr
     ./hyprlock
     ./kitty
+    ./stylix
     #./environment
   ];
 
