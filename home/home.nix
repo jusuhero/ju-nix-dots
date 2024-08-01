@@ -21,7 +21,7 @@
     rofi
     git
     firefox
-
+    ripgrep
     bibata-cursors
   ]);
 
