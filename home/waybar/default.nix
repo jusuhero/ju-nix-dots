@@ -1,4 +1,4 @@
-{ config, pkgs, lib }:
+{ config, pkgs, lib, stylix }:
 
 {
 
@@ -26,4 +26,6 @@ programs.waybar.style = ''
     background: rgb(${config.stylix.base16Scheme.baseDE});
   }
 ''
+
+stylix.targets.waybar.enable = true;
 }

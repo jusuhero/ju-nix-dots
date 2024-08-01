@@ -48,18 +48,22 @@
       };
     };
 
-    animations {
+    animations = {
       enabled = true;
-      bezier = "overshot, 0.05, 0.9, 0.1, 1.05";
-      bezier = "smoothOut, 0.36, 0, 0.66, -0.56";
-      bezier = "smoothIn, 0.25, 1, 0.5, 1";
+      bezier = [
+      	"overshot, 0.05, 0.9, 0.1, 1.05"
+      	"smoothOut, 0.36, 0, 0.66, -0.56"
+      	"smoothIn, 0.25, 1, 0.5, 1"
+	];
 
-      animation = "windows, 1, 2, overshot, slide";
-      animation = "windowsOut, 1, 7, default, popin 80%";
-      animation = "border, 1, 10, default";
+      animation = [
+      "windows, 1, 2, overshot, slide"
+      "windowsOut, 1, 7, default, popin 80%"
+      "border, 1, 10, default"
+      ];
     };
 
-    dwindle {
+    dwindle = {
       no_gaps_when_only = false; 
       pseudotile = true;
       preserve_split = true;
@@ -78,15 +82,15 @@
     decoration = {
       rounding = 10;
 
-      blur {
-        enabled = true 
-        size = 8
-        passes = 3
+      blur = {
+        enabled = true;
+        size = 8;
+        passes = 3;
       };
 
       drop-shadow = true; 
       shadow_range = 15;
-      shadow_offset = 0,0;
+      shadow_offset = "0,0";
       shadow_render_power = 3;
     };
 
@@ -94,9 +98,9 @@
       disable_hyprland_logo = true;
       disable_splash_rendering = true; 
       mouse_move_enables_dpms = true;
-      enable_swallow = true 
-      vfr = true 
-      swallow_regex = ^(kitty)$
+      enable_swallow = true;
+      vfr = true;
+      swallow_regex = "^(kitty)$";
     };
 
     bindm = [
