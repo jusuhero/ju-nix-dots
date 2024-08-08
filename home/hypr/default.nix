@@ -115,8 +115,6 @@
       "ALT, Return, exec, kitty --single-instance"
       "CTRL_ALT, T, exec, kitty --title fly_is_kitty"
 
-      "$mainMod, B, exec, ${waybarToggle { config = "top";}}/bin/waybar_toggle_top"
-
       "$mainMod, L, exec, hyprlock"
       "$mainMod, F, exec, firefox"
       "$mainMod, D, exec, discord"
