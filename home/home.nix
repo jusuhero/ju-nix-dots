@@ -23,6 +23,8 @@
     firefox
     ripgrep
     bibata-cursors
+    hyprpaper
+    swaybg
   ]);
 
   dconf.settings = {
